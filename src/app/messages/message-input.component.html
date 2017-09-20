@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2">
+  <form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm" ngNativeValidate>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <input type="text" id="content" class="form-control" [ngModel]="message?.content" name="content" required placeholder='Enter a message to continue...'>
+    </div>
+    <button class="btn btn-primary" type="submit">{{button}}</button>
+    <button class="btn btn-danger" type="button" (click) = "onClear(formRef)">Clear</button>
+  </form>
+</div>
+
+<!--
+Basically by default angular is adding something called novalidate. If you want to use browser's native form validation just add ngNativeValidate attribute:
+
+template driven approch:
+template to create form,
+we import FormsModule in app.module for this approach
+
+when ngModel is given name attribute shld be used as it will be passed as the control
+local ref to form to access the name in ts
+ngForm is to get access for the form ng2 created itself.
+-->

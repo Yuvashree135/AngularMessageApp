@@ -1,0 +1,37 @@
+<div class="col-md-8 col-md-offset-2">
+  <form [formGroup]="myForm" (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" class="form-control" formControlName="firstName">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" class="form-control" formControlName="lastName">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-control"  formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Sign Up</button>
+  </form>
+</div>
+
+<!--
+ data driven or reactive forms approcah to create form.
+ for this approach we have to add ReactiveFormsModule in app.module
+
+ where we create the form ourself and then we tell ng2 to use it
+
+ here we create form programatically done in ts file.
+
+ formGroup property binding is to say ng2 to use the form specified and
+ we have to tell ng2 which input belongs to which control
+ by adding a directive formControlName='firstName'
+ firstName is the key used in ts file.
+ This will sync the form data and the ts file data
+
+ no need to pass formRef in onSubmit bcoz it is already defined in ts file -->

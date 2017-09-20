@@ -1,0 +1,19 @@
+<header class="row">
+  <nav class="col-md-8 col-md-offset-2">
+    <ul class="nav nav-pills">
+      <li routerLinkActive="active"><a [routerLink]="['messages']">Messenger</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['auth']">Authentication</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- router link: property binding
+ It takes an array each element is a segment in our url
+ eg: ['messages', 1] which navigates to /messages/1
+ eg: ['messages'] to /messages
+ give the exact path to redirect correctly
+
+  routerLinkActive from routerLink directive
+  value passed acts as a css for this list
+  so active class is applied when the link is active
+-->

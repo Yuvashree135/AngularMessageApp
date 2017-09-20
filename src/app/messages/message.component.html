@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    {{ message.content }}
+  </div>
+  <div class="panel-footer">
+    <div class="author">
+      {{ message.author }}
+    </div>
+    <div class="config">
+      <a (click)="editMessage()">Edit</a>
+      <a (click)="deleteMessage()">Delete</a>
+    </div>
+  </div>
+</div>

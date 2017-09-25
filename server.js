@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 
 const api = require('./server/api');
 const message = require('./server/messages');
-// const user = require('./server/users');
+const user = require('./server/users');
 const mongoose = require('mongoose');
 
 const app = express();
-mongoose.connect('localhost:27017/node-angular');
+mongoose.connect('127.0.0.1:27017/node-angular');
 
 // to use res.render
 // app.set('views', path.join(__dirname, 'src'))
@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/message', message);
-// app.use('/user', user);
+app.use('/user', user);
 app.use('/', api);
 
 app.get('*',(req, res) => {

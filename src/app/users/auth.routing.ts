@@ -1,10 +1,13 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { SignupComponent } from './signup.component';
 import { SigninComponent } from './signin.component';
 import { LogoutComponent } from './logout.component';
 
-export const AUTH_ROUTES: Routes = [
+// on direct loading we give export
+// if lazy loading we remove export and add forChild method
+// export const AUTH_ROUTES: Routes = [
+const AUTH_ROUTES: Routes = [
     {
       path: '',
       redirectTo: '/auth/signup',
@@ -19,7 +22,11 @@ export const AUTH_ROUTES: Routes = [
       path: 'logout',
       component: LogoutComponent
     }
-]
+];
+
+// for child to denote that its part of file and loaded when needed
+// lazy loading
+export const authRouting = RouterModule.forChild(AUTH_ROUTES);
 
 /*
   paths entered here are subroutes

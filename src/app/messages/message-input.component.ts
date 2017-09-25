@@ -33,7 +33,7 @@ export class MessageInputComponent implements OnInit{
       // once call is completed we can add a function here
       this.messageService.addMessage(message).subscribe(
           data => console.log(data),
-          error => console.error(error),
+          error => console.error(error)
         );
       }
     form.resetForm();

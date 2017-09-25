@@ -28,6 +28,6 @@ var user = new Schema({
 })
 
 //to validate and send err if value is not unique
-schema.plugin(mongooseUniqueValidator);
+user.plugin(mongooseUniqueValidator);
 
 module.exports = mongoose.model('User',user)

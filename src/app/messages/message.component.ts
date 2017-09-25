@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 })
 
 export class MessageComponent {
-  @Input() value: Message;
+  @Input('Aliasmessage') message: Message;
   //to pass the event to app component as it cant listen to multiple events
   @Output() editClicked = new EventEmitter<string>();
 
@@ -25,5 +25,9 @@ export class MessageComponent {
       .subscribe(
         result => console.log(result)
       );
+  }
+
+  belongsToUser() {
+    return localStorage.getItem('userId') == this.message.userId;
   }
 }

@@ -2,7 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MessagesComponent } from './messages/messages.component'
 import { AuthenticationComponent } from './users/authentication.component'
-import { AUTH_ROUTES } from './users/auth.routing';
+// on lazy loading no need to import as we use forChild method
+// import { AUTH_ROUTES } from './users/auth.routing';
 
 const APP_ROUTES: Routes = [
   {
@@ -14,10 +15,20 @@ const APP_ROUTES: Routes = [
     path: 'messages',
     component: MessagesComponent
   },
+  // we use this on exporting the child route
+  // {
+  //   path: 'auth',
+  //   component: AuthenticationComponent,
+  //   children: AUTH_ROUTES
+  // }
+  // if forChild() method
+  // lazy loading
+  // loadChildren takes a string input ; the path to the auth module which just points to the route and it wont load instantly
+  // #AuthModule is the class name
   {
     path: 'auth',
     component: AuthenticationComponent,
-    children: AUTH_ROUTES
+    loadChildren: './users/auth.module#AuthModule'
   }
 ];
 

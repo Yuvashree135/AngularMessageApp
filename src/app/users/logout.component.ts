@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
   selector: 'app-logout',
   template: `
     <div class="col-md-8 col-md-offset-2">
-      <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+      <button class="btn btn-danger" (click)="onLogout()" *ngIf="isLoggedIn()">Logout</button>
     </div>
   `
 })
@@ -19,5 +19,9 @@ export class LogoutComponent {
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/auth', 'signin'])
+  }
+  
+  isLoggedIn() {
+    return this.authService.isLoggedIn()
   }
 }

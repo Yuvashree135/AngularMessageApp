@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
-  <form [formGroup]="myForm" (ngSubmit) = "onSubmit()">
+  <form [formGroup]="myForm" (ngSubmit) = "onSubmit()" *ngIf="!isLoggedIn()">
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" id="email" class="form-control"  formControlName="email">

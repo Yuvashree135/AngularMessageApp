@@ -2,7 +2,8 @@
   <nav class="col-md-8 col-md-offset-2">
     <ul class="nav nav-pills">
       <li routerLinkActive="active"><a [routerLink]="['messages']">Messenger</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['auth']">Authentication</a></li>
+      <li routerLinkActive="active" class="pull-right" *ngIf="!isLoggedIn()"><a [routerLink]="['auth']">SignUp/SignIn</a></li>
+      <button class="btn btn-danger pull-right" (click)="onLogout()" *ngIf="isLoggedIn()">Logout</button>
     </ul>
   </nav>
 </header>

@@ -31,4 +31,8 @@ export class SigninComponent implements OnInit {
         error => console.log(error)
       )
   };
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn()
+  }
 }

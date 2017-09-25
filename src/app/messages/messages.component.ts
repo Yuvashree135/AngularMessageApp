@@ -8,7 +8,7 @@ import {
   <div class="row">
       <message-input></message-input>
     </div>
-    <br/>
+    <hr/>
     <div class="row">
       <app-message-list></app-message-list>
     </div>
